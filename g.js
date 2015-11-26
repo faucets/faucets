@@ -1,51 +1,25 @@
-var adr,x=0,c = 59;
+var faucets = [
+    'http://milli.io/?r=',
+    'http://bibifaucet.com/?r='
+];
 
-function address() {
-    adr=prompt('Enter your bitcoin address:');
+var refAddress = '1AjgZS5n498VP5cEokGe7WWdz1ijS4pxP8';
+
+var index = 0;
+
+function displayFaucet(index) {
+    var faucet = faucets[index] + refAddress;
+    document.getElementById("myframe").src=faucet;
 }
 
 function next() {
-    x+=1;
-    if (x>c) {
-        x=1;
-    }
-    changeSrc();
+    index+=1;
+    if (index >= faucets.length) index=0;
+    displayFaucet();
 }
 
 function prev() {
-    x-=1;
-    if (x<1) {
-        x=c;
-    }
-    changeSrc();
-}
-
-function jumpTo() {
-    i = prompt("Enter a number to skip to that faucet.");
-    x = 0;
-    while (i!=x) {
-        if (x>c) {
-            break;
-        }
-        x+=1;
-    }
-    changeSrc();
-}
-
-console.log(adr);
-
-function changeSrc() {
-    switch (x){
-        case 1:
-            document.getElementById("myframe").src="http://milli.io/?r=1AjgZS5n498VP5cEokGe7WWdz1ijS4pxP8";
-            break;
-        case 2:
-            document.getElementById("myframe").src="http://bibifaucet.com/?r=1AjgZS5n498VP5cEokGe7WWdz1ijS4pxP8";
-            break;
-    }
-}
-
-function newTab() {
-    var win=window.open(document.getElementById("myframe").src, '_blank');
-    win.focus();
+    index-=1;
+    if (index < 0) index = faucets.length - 1 ;
+    displayFaucet();
 }
