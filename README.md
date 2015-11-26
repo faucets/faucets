@@ -14,8 +14,3 @@ onClick="function()"
 Replace function() with either next(), prev(), jumpTo(), or link(). Reload is done with changeSrc().
 
 All the javascript does is change the src attribute of an iFrame element with an id of "fm". 
-
-To test it out:
-http://bitcoingrind.netne.net
-
-Donations:1McYLx1YbnUZ5fRPw5Y24PBBQVutf89U6m
