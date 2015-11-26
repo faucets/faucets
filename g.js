@@ -9,7 +9,6 @@ var index = 0;
 
 function displayFaucet() {
     var faucet = faucets[index] + refAddress;
-    console.log('iframe url: ' + faucet);
     document.getElementById("myframe").src=faucet;
 }
 
