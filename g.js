@@ -7,7 +7,7 @@ var refAddress = '1AjgZS5n498VP5cEokGe7WWdz1ijS4pxP8';
 
 var index = 0;
 
-function displayFaucet(index) {
+function displayFaucet() {
     var faucet = faucets[index] + refAddress;
     console.log('iframe url: ' + faucet);
     document.getElementById("myframe").src=faucet;
