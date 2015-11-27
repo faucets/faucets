@@ -1,0 +1,19 @@
+{
+  "name": "Rsquared",
+  "version": "1.0.0",
+  "description": "Rsquared",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3",
+	"request": "2.64.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bitcoin"
+  ],
+  "author": "matmadmat",
+  "license": "ISC"
+}
