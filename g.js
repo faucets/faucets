@@ -32,4 +32,5 @@ function prev() {
 
 function _setUsed() {
     document.cookie = faucets[index].name + '=' + Date.now();
+    document.cookie = 'toto=titi';
 }
