@@ -18,6 +18,7 @@ function displayFaucet() {
 }
 
 function next() {
+    _setUsed()
     index+=1;
     if (index >= faucets.length) index=0;
     displayFaucet();
@@ -27,4 +28,8 @@ function prev() {
     index-=1;
     if (index < 0) index = faucets.length - 1 ;
     displayFaucet();
+}
+
+function _setUsed() {
+    document.cookie = faucets[index].name + '=' + Date.now();
 }
