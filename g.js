@@ -10,7 +10,7 @@ var faucets = [
 var address = '1AjgZS5n498VP5cEokGe7WWdz1ijS4pxP8';
 var refAddress = '1A5NFjjFrHc7JFKTxHN7NeHm7tHPdQjtax';
 
-var index = 0;
+var index = -1;
 
 function displayFaucet() {
     var faucet = faucets[index].url + refAddress;
@@ -18,19 +18,20 @@ function displayFaucet() {
 }
 
 function next() {
-    _setUsed()
+    if ( index !== -1 ) _setUsed()
     index+=1;
     if (index >= faucets.length) index=0;
     displayFaucet();
 }
 
 function prev() {
-    index-=1;
-    if (index < 0) index = faucets.length - 1 ;
-    displayFaucet();
+    if ( index !== -1 ) {
+    	index-=1;
+    	if (index < 0) index = faucets.length - 1 ;
+    	displayFaucet();
+    }
 }
 
 function _setUsed() {
     document.cookie = faucets[index].name + '=' + Date.now();
-    document.cookie = 'toto=titi';
 }
